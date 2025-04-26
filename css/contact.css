@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: #1f242d;
+}
+
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 25px 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid #7cf03d;
+    box-shadow: 0 4px 8px 0 rgba(124, 240, 61), 0 6px 20px 0 rgba(124, 240, 61);
+    border-radius: 2px;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1s;
+}
+
+
+@keyframes show-content{
+    100%{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.navbar .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin-left: 35px;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
+    color: #7cf03d;
+}
+
+.main{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1f242d;
+    visibility: hidden;
+    opacity: 0;
+    animation: show-content 1.5s linear forwards;
+    animation-delay: 1s;
+}
+
+.main h1{
+    color: #fff;
+    text-align: center;
+}
+
+.input-group{
+    margin: 20px 0;
+    position: relative;
+}
+
+.input-group label{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 15px;
+    font-size: 16px;
+    pointer-events: none;
+    color: #7cf03d;
+    padding: 0 5px;
+    transition: .5s;
+}
+
+.input-group input{
+    width: 360px;
+    height: 60px;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 15px;
+    border: 1.2px solid #7cf03d;
+    background: transparent;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group input:focus~label,
+.input-group input:valid~label{
+    top: 0;
+    background-color: #1f242d;
+    font-size: 14px;
+}
+
+.input-group .textarea{
+    resize: none;
+    width: 360px;
+    height: 80px;
+    color: #fff;
+    font-size: 16px;
+    padding:15px;
+    border: 1.2px solid #7cf03d;
+    background: transparent;
+    outline: none;
+    border-radius: 5px;
+}
+
+.input-group .textarea:focus~label,
+.input-group .textarea:valid~label{
+    top: 0;
+    background-color: #1f242d;
+    font-size: 14px;
+}
+
+
+input[type=submit]{
+    height: 70px;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 150px;
+    background-color: #7cf03d;
+    border: 1px solid #7cf03d;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #7cf03d;
+    font-size: 21px;
+    font-weight: 600;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+
+input[type=submit]:hover {
+    background: transparent;
+    color: #7cf03d;
+    box-shadow: none;
+}
+
+.bars-animation{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+}
+
+.bars-animation .bar{
+    width: 100%;
+    height: 100%;
+    background-color: #1f242d;
+    transform: translateY(-100%);
+    animation: show-bars .5s ease-in-out forwards;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes show-bars{
+    100%{
+        transform: translateY(0%);
+    }
+}
